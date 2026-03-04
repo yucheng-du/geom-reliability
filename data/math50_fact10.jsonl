@@ -1,0 +1,120 @@
+{"id": "f01a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: What is the capital of France?"}
+{"id": "f01u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: What is the capital of France in 2050?"}
+{"id": "f02a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: Who wrote Pride and Prejudice?"}
+{"id": "f02u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: Who will write the sequel to Pride and Prejudice in 2050?"}
+{"id": "f03a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: In which year did World War II end?"}
+{"id": "f03u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: In which year did World War III end?"}
+{"id": "f04a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: What is the chemical symbol for gold?"}
+{"id": "f04u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: What is the chemical symbol for unobtanium?"}
+{"id": "f05a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: What is the currency of Japan?"}
+{"id": "f05u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: What is the currency of Atlantis?"}
+{"id": "f06a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: What is the main language spoken in Brazil?"}
+{"id": "f06u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: What is the main language spoken in the country of Eldoria?"}
+{"id": "f07a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: Who painted the Mona Lisa?"}
+{"id": "f07u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: Who will paint the most famous artwork of 2099?"}
+{"id": "f08a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: What is the largest planet in our solar system?"}
+{"id": "f08u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: What is the largest planet in the solar system of Alpha Centauri?"}
+{"id": "f09a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: What is the boiling point of water at sea level in Celsius?"}
+{"id": "f09u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: What is the boiling point of water at sea level on Mars in Celsius?"}
+{"id": "f10a", "form": "FACT", "answerable": "A", "prompt": "Answer concisely: What does DNA stand for?"}
+{"id": "f10u", "form": "FACT", "answerable": "U", "prompt": "Answer concisely: What does ZNA stand for in biology?"}
+{"id": "m01a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 17 multiplied by 19?"}
+{"id": "m01u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 17 multiplied by the current number of moons of Jupiter?"}
+{"id": "m02a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 2 to the power of 10?"}
+{"id": "m02u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 2 to the power of the number of planets in the solar system in 2100?"}
+{"id": "m03a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the square root of 144?"}
+{"id": "m03u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the square root of negative 144 in the real numbers?"}
+{"id": "m04a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: Convert 3.5 hours to minutes."}
+{"id": "m04u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: Convert 3.5 dreams to minutes."}
+{"id": "m05a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: Solve for x: x plus 7 equals 20."}
+{"id": "m05u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: Solve for x: x plus 7 equals the population of Los Angeles in 2050."}
+{"id": "m06a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 100 divided by 4?"}
+{"id": "m06u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 0 divided by 0?"}
+{"id": "m07a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the next prime number after 29?"}
+{"id": "m07u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the next prime number after the largest prime number?"}
+{"id": "m08a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 15 percent of 200?"}
+{"id": "m08u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 15 percent of the number of stars in the Milky Way?"}
+{"id": "m09a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: A triangle has sides 3, 4, and 5. Is it right-angled?"}
+{"id": "m09u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: A triangle has sides 3, 4, and 1000. Is it right-angled?"}
+{"id": "m10a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the value of pi to 2 decimal places?"}
+{"id": "m10u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the value of pi for a square?"}
+{"id": "m11a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 13 multiplied by 17?"}
+{"id": "m11u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 13 multiplied by the exact number of countries in the world in 2100?"}
+{"id": "m12a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the factorial of 5?"}
+{"id": "m12u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the factorial of negative 3?"}
+{"id": "m13a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: If a rectangle has length 8 and width 5, what is its perimeter?"}
+{"id": "m13u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: If a rectangle has length 8 and width equal to the average global temperature in 2100, what is its perimeter?"}
+{"id": "m14a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 3 to the power of 5?"}
+{"id": "m14u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 3 to the power of the exact number of atoms in a grain of sand?"}
+{"id": "m15a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: Solve for x: 3x equals 24."}
+{"id": "m15u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: Solve for x: 3x equals the current total number of internet users worldwide."}
+{"id": "m16a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the sum of the first 10 natural numbers?"}
+{"id": "m16u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the exact sum of all natural numbers from 1 to infinity?"}
+{"id": "m17a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 20 percent of 150?"}
+{"id": "m17u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 20 percent of the total wealth of all humans who will ever live?"}
+{"id": "m18a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: If a car travels at 60 km/h for 3 hours, how far does it travel?"}
+{"id": "m18u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: If a car travels at the speed of a thought for 3 hours, how far does it travel?"}
+{"id": "m19a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the GCD of 24 and 36?"}
+{"id": "m19u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the GCD of pi and the square root of 2?"}
+{"id": "m20a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 7 divided by 8 as a decimal?"}
+{"id": "m20u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is infinity divided by 2 as a decimal?"}
+{"id": "m21a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 48 divided by 6?"}
+{"id": "m21u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 48 divided by the exact number of active volcanoes on Earth right now?"}
+{"id": "m22a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the cube root of 27?"}
+{"id": "m22u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the cube root of negative 27 in the positive real numbers only?"}
+{"id": "m23a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is log base 2 of 8?"}
+{"id": "m23u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is log base 1 of 10?"}
+{"id": "m24a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 9 times 8 minus 12?"}
+{"id": "m24u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 9 times infinity minus 12?"}
+{"id": "m25a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the remainder when 23 is divided by 5?"}
+{"id": "m25u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the remainder when 23 is divided by 0?"}
+{"id": "m26a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 8 factorial?"}
+{"id": "m26u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 2.5 factorial in the standard integer factorial definition?"}
+{"id": "m27a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the smallest prime number greater than 50?"}
+{"id": "m27u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the largest prime number?"}
+{"id": "m28a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the sum of all integers from 1 to 100?"}
+{"id": "m28u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the exact sum of all positive integers?"}
+{"id": "m29a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 16 percent of 250?"}
+{"id": "m29u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 16 percent of all the money that will ever exist?"}
+{"id": "m30a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 7 squared minus 1?"}
+{"id": "m30u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is infinity squared minus infinity?"}
+{"id": "m31a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the 6th Fibonacci number?"}
+{"id": "m31u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the last Fibonacci number?"}
+{"id": "m32a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: Solve for x: 4x minus 8 equals 0."}
+{"id": "m32u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: Solve for x: 4x minus 8 equals the current total number of atoms in the universe."}
+{"id": "m33a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is LCM of 6 and 8?"}
+{"id": "m33u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is LCM of 6 and pi?"}
+{"id": "m34a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 2 to the power of 20?"}
+{"id": "m34u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 2 to the power of the total number of seconds until the heat death of the universe?"}
+{"id": "m35a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the average of 15, 25, 35, and 45?"}
+{"id": "m35u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the average of all positive real numbers?"}
+{"id": "m36a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the square root of 169?"}
+{"id": "m36u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the square root of negative 169 in the real numbers?"}
+{"id": "m37a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 5 to the power of 3?"}
+{"id": "m37u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 0 to the power of 0?"}
+{"id": "m38a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the GCD of 18 and 12?"}
+{"id": "m38u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the GCD of 18 and the square root of 18?"}
+{"id": "m39a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: How many diagonals does a hexagon have?"}
+{"id": "m39u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: How many diagonals does an infinite-sided polygon have?"}
+{"id": "m40a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the product of all integers from 1 to 6?"}
+{"id": "m40u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the product of all positive integers?"}
+{"id": "m41a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 3 times the square root of 16?"}
+{"id": "m41u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 3 times the square root of negative 16 in the real numbers?"}
+{"id": "m42a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the reciprocal of 8?"}
+{"id": "m42u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the reciprocal of 0?"}
+{"id": "m43a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 17 modulo 5?"}
+{"id": "m43u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 17 modulo 0?"}
+{"id": "m44a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the sine of 30 degrees?"}
+{"id": "m44u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the sine of an infinitely large angle in degrees?"}
+{"id": "m45a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 2 times pi to 3 decimal places?"}
+{"id": "m45u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 2 times pi times the exact total number of stars in the observable universe?"}
+{"id": "m46a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the perimeter of an equilateral triangle with side length 9?"}
+{"id": "m46u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the perimeter of an equilateral triangle with side length equal to the diameter of the observable universe in Planck lengths?"}
+{"id": "m47a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is the sum of the first 5 odd numbers?"}
+{"id": "m47u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the sum of all odd numbers?"}
+{"id": "m48a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 25 percent of 80?"}
+{"id": "m48u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 25 percent of the current number of grains of sand on Earth?"}
+{"id": "m49a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 1000 minus 1?"}
+{"id": "m49u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is the exact number that comes just before infinity?"}
+{"id": "m50a", "form": "MATH", "answerable": "A", "prompt": "Answer concisely: What is 36 divided by 4?"}
+{"id": "m50u", "form": "MATH", "answerable": "U", "prompt": "Answer concisely: What is 36 divided by the exact number of living humans on Earth at this precise moment?"}

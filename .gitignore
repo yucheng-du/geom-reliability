@@ -1,0 +1,7 @@
+*.npy
+*.pyc
+__pycache__/
+experiments/
+*.pdf
+*.aux *.log *.bbl *.blg *.out *.fls *.fdb_latexmk
+.DS_Store

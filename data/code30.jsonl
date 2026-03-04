@@ -1,0 +1,60 @@
+{"id": "c01a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `len([1, 2, 3])` return in Python?"}
+{"id": "c01u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `len(itertools.count())` return in Python?"}
+{"id": "c02a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `abs(-9)` return in Python?"}
+{"id": "c02u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `abs('hello')` return in Python?"}
+{"id": "c03a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `max([3, 1, 4, 1, 5])` return in Python?"}
+{"id": "c03u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `max([])` return in Python?"}
+{"id": "c04a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `sorted([5, 2, 8, 1])` return in Python?"}
+{"id": "c04u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `sorted(itertools.count())` return in Python?"}
+{"id": "c05a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `bin(10)` return in Python?"}
+{"id": "c05u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `bin(3.14)` return in Python?"}
+{"id": "c06a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `int('42')` return in Python?"}
+{"id": "c06u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `int('forty-two')` return in Python?"}
+{"id": "c07a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `'hello'[1]` return in Python?"}
+{"id": "c07u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `'hello'[100]` return in Python?"}
+{"id": "c08a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `'python'.upper()` return?"}
+{"id": "c08u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `(42).upper()` return in Python?"}
+{"id": "c09a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `sum([1, 2, 3, 4, 5])` return in Python?"}
+{"id": "c09u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `sum(itertools.count())` return in Python?"}
+{"id": "c10a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `list(range(5))` return in Python?"}
+{"id": "c10u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `list(range(float('inf')))` return in Python?"}
+{"id": "c11a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `len('hello world')` return in Python?"}
+{"id": "c11u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `len(42)` return in Python?"}
+{"id": "c12a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `[1, 2, 3].pop()` return in Python?"}
+{"id": "c12u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `[].pop()` return in Python?"}
+{"id": "c13a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `round(3.7)` return in Python?"}
+{"id": "c13u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `round('3.7')` return in Python?"}
+{"id": "c14a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `min([5, 3, 8, 1])` return in Python?"}
+{"id": "c14u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `min(set())` return in Python?"}
+{"id": "c15a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `'hello' * 3` return in Python?"}
+{"id": "c15u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `'hello' * 'world'` return in Python?"}
+{"id": "c16a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `type(3.14)` return in Python?"}
+{"id": "c16u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `type(x)` return in Python when x has never been assigned?"}
+{"id": "c17a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `chr(65)` return in Python?"}
+{"id": "c17u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `chr(2000000)` return in Python?"}
+{"id": "c18a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `hash(42)` return in Python?"}
+{"id": "c18u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `hash([1, 2, 3])` return in Python?"}
+{"id": "c19a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `'{:.2f}'.format(3.14159)` return in Python?"}
+{"id": "c19u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `'{:.2f}'.format('pi')` return in Python?"}
+{"id": "c20a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `divmod(10, 3)` return in Python?"}
+{"id": "c20u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `divmod(10, 0)` return in Python?"}
+{"id": "c21a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `[1, 2, 3][-1]` return in Python?"}
+{"id": "c21u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `[1, 2, 3][-100]` return in Python?"}
+{"id": "c22a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `ord('A')` return in Python?"}
+{"id": "c22u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `ord('AB')` return in Python?"}
+{"id": "c23a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `'hello'.count('l')` return?"}
+{"id": "c23u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `(42).count('l')` return in Python?"}
+{"id": "c24a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `pow(2, 10)` return in Python?"}
+{"id": "c24u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `pow(2, 10, 0)` return in Python?"}
+{"id": "c25a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `'-'.join(['a', 'b', 'c'])` return?"}
+{"id": "c25u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `'-'.join([1, 2, 3])` return in Python?"}
+{"id": "c26a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `True + True` return in Python?"}
+{"id": "c26u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `True + 'True'` return in Python?"}
+{"id": "c27a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `bytes([65, 66, 67])` return in Python?"}
+{"id": "c27u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `bytes([-1, 0, 1])` return in Python?"}
+{"id": "c28a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `float('3.14')` return in Python?"}
+{"id": "c28u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `float('three point fourteen')` return in Python?"}
+{"id": "c29a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `'hello'.replace('l', 'r')` return?"}
+{"id": "c29u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `None.replace('l', 'r')` return in Python?"}
+{"id": "c30a", "form": "CODE", "answerable": "A", "prompt": "Answer concisely: What does `list(enumerate([10, 20, 30]))` return in Python?"}
+{"id": "c30u", "form": "CODE", "answerable": "U", "prompt": "Answer concisely: What does `list(enumerate(42))` return in Python?"}
