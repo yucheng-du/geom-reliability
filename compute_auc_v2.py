@@ -11,8 +11,8 @@ Usage:
     python compute_auc_v2.py           # all models, FACT+MATH+CODE where available
     python compute_auc_v2.py --latex   # also print LaTeX table
 
-Run configuration (edit RUNS dict below if paths differ):
-  MATH n=50 + FACT n=10 per model (merged across run dirs)
+Run configuration (edit MODEL_RUNS below if paths differ):
+  MATH n=50 + FACT n=10 per model
   CODE n=30 per model
 """
 
@@ -31,20 +31,16 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 
 MODEL_RUNS = {
     "llama":   {
-        "FACT+MATH": ["experiments/runs/run_003",
-                      "experiments/runs/run_003b",
-                      "experiments/runs/run_003c"],
-        "CODE":      ["experiments/runs/run_004_code_llama"],
+        "FACT+MATH": ["experiments/runs/run_main_llama"],
+        "CODE":      ["experiments/runs/run_code_llama"],
     },
     "qwen":    {
-        "FACT+MATH": ["experiments/runs/run_003_qwen",
-                      "experiments/runs/run_003c_qwen"],
-        "CODE":      ["experiments/runs/run_004_code_qwen"],
+        "FACT+MATH": ["experiments/runs/run_main_qwen"],
+        "CODE":      ["experiments/runs/run_code_qwen"],
     },
     "mistral": {
-        "FACT+MATH": ["experiments/runs/run_003_mistral",
-                      "experiments/runs/run_003c_mistral"],
-        "CODE":      ["experiments/runs/run_004_code_mistral"],
+        "FACT+MATH": ["experiments/runs/run_main_mistral"],
+        "CODE":      ["experiments/runs/run_code_mistral"],
     },
 }
 

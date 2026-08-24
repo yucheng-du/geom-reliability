@@ -4,12 +4,12 @@ run_layerwise.py — Extract all-layer hidden states for MATH matched pairs.
 For each prompt, saves a matrix of shape (n_layers, hidden_dim) where each
 row is the mean-pooled hidden state at that layer (including embedding layer 0).
 
-Uses the merged MATH n=20 paired prompts (same as analyze_003_full.py Llama mode,
-or run_003_qwen for Qwen). Only MATH prompts are extracted (FACT excluded to keep
-output manageable and focus the layer-wise analysis on the significant form).
+Uses the first 20 MATH matched pairs from the released prompt file, matching the
+paper's layer-wise experiment. FACT prompts are excluded.
 
 Usage:
-    python run_layerwise.py --model llama
+    python run_layerwise.py --model llama \
+        --prompts data/math50_fact10.jsonl
     python run_layerwise.py --model qwen
     python run_layerwise.py --model mistral
 
@@ -26,14 +26,9 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-MODEL_PATHS = {
-    "llama": os.path.expanduser(
-        "~/.llama/checkpoints/Llama3.1-8B-Instruct-HF"
-    ),
-    "qwen": os.path.expanduser(
-        "~/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct"
-        "/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
-    ),
+MODEL_IDS = {
+    "llama": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "qwen": "Qwen/Qwen2.5-7B-Instruct",
     "mistral": "mistralai/Mistral-7B-Instruct-v0.3",
 }
 
@@ -42,14 +37,6 @@ MODEL_LABELS = {
     "qwen":    "Qwen2.5-7B-Instruct",
     "mistral": "Mistral-7B-Instruct-v0.3",
 }
-
-# Source dirs for MATH n=20 prompts per model
-MATH_PROMPT_DIRS = {
-    "llama":   ["experiments/runs/run_003", "experiments/runs/run_003b"],
-    "qwen":    ["experiments/runs/run_003_qwen"],
-    "mistral": ["experiments/runs/run_003_mistral"],
-}
-
 
 def get_device():
     if torch.backends.mps.is_available():
@@ -80,34 +67,60 @@ def extract_all_layers(model, inputs):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True, choices=["llama", "qwen", "mistral"])
+    parser.add_argument(
+        "--prompts", default="data/math50_fact10.jsonl",
+        help="Prompt JSONL (default: data/math50_fact10.jsonl)."
+    )
+    parser.add_argument(
+        "--n-pairs", type=int, default=20,
+        help="Number of MATH pairs to extract (default: 20, as in the paper)."
+    )
+    parser.add_argument(
+        "--out-dir",
+        help="Output directory (default: experiments/runs/run_layerwise_<model>)."
+    )
+    parser.add_argument(
+        "--model-id",
+        help="Override the default Hugging Face model id or use a local path."
+    )
     args = parser.parse_args()
 
-    out_dir = f"experiments/runs/run_layerwise_{args.model}"
+    if args.n_pairs < 1:
+        parser.error("--n-pairs must be at least 1")
+
+    out_dir = args.out_dir or f"experiments/runs/run_layerwise_{args.model}"
     os.makedirs(out_dir, exist_ok=True)
 
     device     = get_device()
-    model_id   = MODEL_PATHS[args.model]
+    model_id   = args.model_id or MODEL_IDS[args.model]
     model_name = MODEL_LABELS[args.model]
+    dtype      = torch.float32 if device.type == "cpu" else torch.float16
 
     print(f"Model   : {model_name}")
+    print(f"Path    : {model_id}")
     print(f"Device  : {device}")
+    print(f"Dtype   : {dtype}")
 
     tokenizer = AutoTokenizer.from_pretrained(model_id, use_fast=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
     model = AutoModelForCausalLM.from_pretrained(
-        model_id, torch_dtype=torch.float16
+        model_id, torch_dtype=dtype
     ).to(device)
     model.eval()
 
-    # Load MATH prompts only (filter out FACT)
-    all_prompts = []
-    for src_dir in MATH_PROMPT_DIRS[args.model]:
-        rows = load_prompts(os.path.join(src_dir, "prompts.jsonl"))
-        all_prompts.extend([r for r in rows if r["form"] == "MATH"])
+    rows = load_prompts(args.prompts)
+    math_prompts = [r for r in rows if r["form"] == "MATH"]
+    expected = 2 * args.n_pairs
+    if len(math_prompts) < expected:
+        raise ValueError(
+            f"Requested {args.n_pairs} MATH pairs, but {args.prompts} contains "
+            f"only {len(math_prompts)} MATH prompts."
+        )
+    all_prompts = math_prompts[:expected]
 
-    print(f"MATH prompts: {len(all_prompts)}")
+    print(f"MATH prompts: {len(all_prompts)} ({args.n_pairs} pairs)")
 
     all_layer_vecs = []
     meta_rows      = []

@@ -7,35 +7,15 @@ multi-model experiments.
 
 Usage examples:
 
-  # Llama: FACT-10 + MATH-50 (original 20 + extended 30)
+  # Llama: FACT-10 + MATH-50
   python analyze_controlled.py \\
-    --run-dirs experiments/runs/run_003 experiments/runs/run_003b experiments/runs/run_003c \\
-    --label llama_math50
-
-  # Qwen: FACT-10 + MATH-50
-  python analyze_controlled.py \\
-    --run-dirs experiments/runs/run_003_qwen experiments/runs/run_003c_qwen \\
-    --label qwen_math50
-
-  # Mistral: FACT-10 + MATH-50
-  python analyze_controlled.py \\
-    --run-dirs experiments/runs/run_003_mistral experiments/runs/run_003c_mistral \\
-    --label mistral_math50
+    --run-dirs experiments/runs/run_main_llama \\
+    --label llama_math50_fact10
 
   # Llama CODE-30
   python analyze_controlled.py \\
-    --run-dirs experiments/runs/run_004_code_llama \\
+    --run-dirs experiments/runs/run_code_llama \\
     --label llama_code
-
-  # Qwen CODE-30
-  python analyze_controlled.py \\
-    --run-dirs experiments/runs/run_004_code_qwen \\
-    --label qwen_code
-
-  # Mistral CODE-30
-  python analyze_controlled.py \\
-    --run-dirs experiments/runs/run_004_code_mistral \\
-    --label mistral_code
 
 Output (in experiments/runs/results_{label}/):
   summary.txt     full text report

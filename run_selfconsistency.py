@@ -10,31 +10,11 @@ Key design choices:
   - Supports resume: appends to existing output file, skipping already-done ids.
 
 Usage:
-  # MATH-50 + FACT-10 for all 3 models
   python run_selfconsistency.py --model llama --n-samples 5 \\
-      --run-dirs experiments/runs/run_003 experiments/runs/run_003b experiments/runs/run_003c \\
+      --run-dirs experiments/runs/run_main_llama \\
       --out-file experiments/selfconsistency/llama_math50_fact10.jsonl
 
-  python run_selfconsistency.py --model qwen --n-samples 5 \\
-      --run-dirs experiments/runs/run_003_qwen experiments/runs/run_003c_qwen \\
-      --out-file experiments/selfconsistency/qwen_math50_fact10.jsonl
-
-  python run_selfconsistency.py --model mistral --n-samples 5 \\
-      --run-dirs experiments/runs/run_003_mistral experiments/runs/run_003c_mistral \\
-      --out-file experiments/selfconsistency/mistral_math50_fact10.jsonl
-
-  # CODE-30
-  python run_selfconsistency.py --model llama --n-samples 5 \\
-      --run-dirs experiments/runs/run_004_code_llama \\
-      --out-file experiments/selfconsistency/llama_code30.jsonl
-
-  python run_selfconsistency.py --model qwen --n-samples 5 \\
-      --run-dirs experiments/runs/run_004_code_qwen \\
-      --out-file experiments/selfconsistency/qwen_code30.jsonl
-
-  python run_selfconsistency.py --model mistral --n-samples 5 \\
-      --run-dirs experiments/runs/run_004_code_mistral \\
-      --out-file experiments/selfconsistency/mistral_code30.jsonl
+  # Replace run_main_llama with run_code_llama for the CODE prompts.
 
 Output JSONL (one line per sample):
   {"id": "m01a", "form": "MATH", "answerable": "A",
@@ -48,14 +28,9 @@ import os
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-MODEL_PATHS = {
-    "llama": os.path.expanduser(
-        "~/.llama/checkpoints/Llama3.1-8B-Instruct-HF"
-    ),
-    "qwen": os.path.expanduser(
-        "~/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct"
-        "/snapshots/a09a35458c702b33eeacc393d103063234e8bc28"
-    ),
+MODEL_IDS = {
+    "llama": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "qwen": "Qwen/Qwen2.5-7B-Instruct",
     "mistral": "mistralai/Mistral-7B-Instruct-v0.3",
 }
 
@@ -97,6 +72,10 @@ def load_prompts_from_dirs(run_dirs):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True, choices=["llama", "qwen", "mistral"])
+    parser.add_argument(
+        "--model-id",
+        help="Override the default Hugging Face model id or use a local path."
+    )
     parser.add_argument("--run-dirs", nargs="+", required=True)
     parser.add_argument("--out-file", required=True)
     parser.add_argument("--n-samples", type=int, default=5,
@@ -111,24 +90,34 @@ def main():
     os.makedirs(os.path.dirname(os.path.abspath(args.out_file)), exist_ok=True)
 
     # Resume support: track which prompt ids are already fully done
-    done_ids = set()
+    id_counts: dict[str, int] = {}
     if os.path.isfile(args.out_file):
-        id_counts: dict[str, int] = {}
         with open(args.out_file, encoding="utf-8") as f:
             for line in f:
                 if not line.strip():
                     continue
                 r = json.loads(line)
                 id_counts[r["id"]] = id_counts.get(r["id"], 0) + 1
-        done_ids = {pid for pid, cnt in id_counts.items() if cnt >= args.n_samples}
+        overfull = {pid: cnt for pid, cnt in id_counts.items() if cnt > args.n_samples}
+        if overfull:
+            raise ValueError(
+                "Output contains more than --n-samples rows for some prompts; "
+                f"clean the file before resuming: {overfull}"
+            )
+        done_ids = {pid for pid, cnt in id_counts.items() if cnt == args.n_samples}
         print(f"Resume: {len(done_ids)} prompts already fully done.")
+    else:
+        done_ids = set()
 
     device     = get_device()
-    model_id   = MODEL_PATHS[args.model]
+    model_id   = args.model_id or MODEL_IDS[args.model]
     model_name = MODEL_LABELS[args.model]
+    dtype      = torch.float32 if device.type == "cpu" else torch.float16
 
     print(f"Model        : {model_name}")
+    print(f"Path         : {model_id}")
     print(f"Device       : {device}")
+    print(f"Dtype        : {dtype}")
     print(f"Samples/prompt: {args.n_samples}  (generated in one pass per prompt)")
     print(f"max_new_tokens: {args.max_new_tokens}")
     print(f"temperature  : {args.temperature}  top_p: {args.top_p}")
@@ -147,7 +136,7 @@ def main():
         tokenizer.pad_token = tokenizer.eos_token
 
     model = AutoModelForCausalLM.from_pretrained(
-        model_id, torch_dtype=torch.float16
+        model_id, torch_dtype=dtype
     ).to(device)
     model.eval()
 
@@ -162,6 +151,8 @@ def main():
                 prompt_text, return_tensors="pt", padding=False
             ).to(device)
             prompt_len = inputs["input_ids"].shape[1]
+            existing_count = id_counts.get(pid, 0)
+            samples_needed = args.n_samples - existing_count
 
             with torch.no_grad():
                 gen_ids = model.generate(
@@ -170,13 +161,13 @@ def main():
                     do_sample=True,
                     temperature=args.temperature,
                     top_p=args.top_p,
-                    num_return_sequences=args.n_samples,   # all samples in one call
+                    num_return_sequences=samples_needed,
                     pad_token_id=tokenizer.eos_token_id,
                     eos_token_id=tokenizer.eos_token_id,
                 )
-            # gen_ids: [n_samples, seq_len]
+            # gen_ids: [samples_needed, seq_len]
 
-            for s_idx, gen in enumerate(gen_ids):
+            for s_idx, gen in enumerate(gen_ids, start=existing_count):
                 response = tokenizer.decode(
                     gen[prompt_len:], skip_special_tokens=True
                 ).strip()

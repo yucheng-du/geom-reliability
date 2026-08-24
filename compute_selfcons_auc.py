@@ -23,12 +23,12 @@ set (oracle threshold; noted in paper as upper-bound F1 estimate).
 Usage:
   python compute_selfcons_auc.py --latex \\
       --sc-file experiments/selfconsistency/llama_math50_fact10.jsonl \\
-      --run-dirs experiments/runs/run_003 experiments/runs/run_003b experiments/runs/run_003c \\
+      --run-dirs experiments/runs/run_main_llama \\
       --model llama --label llama_math50_fact10
 
   python compute_selfcons_auc.py --latex \\
       --sc-file experiments/selfconsistency/qwen_code30.jsonl \\
-      --run-dirs experiments/runs/run_004_code_qwen \\
+      --run-dirs experiments/runs/run_code_qwen \\
       --model qwen --label qwen_code30
 """
 
